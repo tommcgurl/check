@@ -10,7 +10,9 @@
 	defFallback = false;
 
 	var _suspectValid = function _suspectValid(suspect) {
-		if((suspect.charAt(0) !== '.' && suspect.charAt(0) !== '[') || !(typeof suspect === 'string')) {
+		if(!(typeof suspect === 'string')) {
+			return false;
+		} else if(suspect.charAt(0) !== '.' && suspect.charAt(0) !== '[') {
 			return false;
 		} else { 
 			return true;
