@@ -8,7 +8,7 @@ Experimenting with this for now. It is much in its infancy.
 While working for a large company with rich data objects I 
 found myself constantly writing humungous if statements to ensure
 the nested attribute I was accessing was valid. I'm working on this
-as a shothand way to grab a nested object or attribute.
+as a shorthand way to grab a nested object or attribute.
 
 So far the functionality allows for 
 
