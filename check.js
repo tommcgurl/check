@@ -47,14 +47,7 @@
 	 */
 	check.check = function check(obj, suspect, fallback) {
 		var res = fallback || false;
-		if(!_suspectValid(suspect)){
-			return undefined;
-		}
-		try {
-			return !!eval('obj' + suspect) || res;
-		} catch(e) {
-			return res;
-		}
+		return !!self.check.use(objj,suspect,res);
 	};
 	/*
 	 *  First argument is an array of objects
