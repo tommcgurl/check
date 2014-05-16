@@ -23,6 +23,7 @@ each value along the way
 
 Usage
 ----
+```javascript
 	var myObj = {
 		Building: {
 			apartment: {
@@ -37,11 +38,14 @@ Usage
 
 	var result = Check.use(myObj, '.Building.apartment.rooms[1]' false);
 	//result = 'kitchen'
-	
-	*This is equivalent to*
+```	
+*This is equivalent to*
+
+```javascript
 	var result;
 	if(myObj && myObj.Building && myObj.Building.apartment && myObj.Building.apartment.rooms && myObj.Building.apartment.rooms[1]){
 		result = myObj.Building.apartment.rooms[1]
 	} else {
 		result = false;
 	}
+```
