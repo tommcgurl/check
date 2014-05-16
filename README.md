@@ -12,11 +12,36 @@ as a shorthand way to grab a nested object or attribute.
 
 So far the functionality allows for 
 
-	* Getting an object if valid or a fallback value if not valid
+- Getting an object if valid or a fallback value if not valid
 
-	* Finding whether or not an object is valid
+- Finding whether or not an object is valid
 
-	* Getting the evaluation on an array of objects
+- Getting the evaluation on an array of objects
 
-	* Doing all of this without writing long if statements checking
-	each value along the way
+- Doing all of this without writing long if statements checking 
+each value along the way
+
+Usage
+----
+	var myObj = {
+		Building: {
+			apartment: {
+				rooms: [
+					'living',
+					'kitchen',
+					'bedroom'
+				]
+			}
+		}
+	};
+
+	var result = Check.use(myObj, '.Building.apartment.rooms[1]' false);
+	//result = 'kitchen'
+	
+	*This is equivalent to*
+	var result;
+	if(myObj && myObj.Building && myObj.Building.apartment && myObj.Building.apartment.rooms && myObj.Building.apartment.rooms[1]){
+		result = myObj.Building.apartment.rooms[1]
+	} else {
+		result = false;
+	}
