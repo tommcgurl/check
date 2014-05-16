@@ -70,7 +70,7 @@
 	 * Set the default Fallback
 	 */
 	check.setDefaultFallback = function setDefaultFallback(fallback) {
-		self.defFallback = fallback || self.defFallback;
+		self.defFallback = fallback;
 	}
 
 })();
