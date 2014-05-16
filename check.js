@@ -46,8 +46,7 @@
 	 *  if fallback is not passed
 	 */
 	check.check = function check(obj, suspect, fallback) {
-		var res = fallback || false;
-		return !!self.check.use(objj,suspect,res);
+		return !!self.check.use(obj,suspect,false);
 	};
 	/*
 	 *  First argument is an array of objects
