@@ -23,6 +23,8 @@ each value along the way
 
 Usage
 ----
+*Given an object...*
+
 ```javascript
 	var myObj = {
 		Building: {
@@ -35,10 +37,13 @@ Usage
 			}
 		}
 	};
+```	
+*Checkjs allows you to safely use this object like this...*
 
+```javascript
 	var result = Check.use(myObj, '.Building.apartment.rooms[1]' false);
 	//result = 'kitchen'
-```	
+```
 *This is equivalent to*
 
 ```javascript
