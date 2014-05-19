@@ -89,7 +89,7 @@ and we want to safely access the 'bedroom' String (myObj.Building.apartments.roo
 or anypart of this object is at some point undefined or invalide (for example if you have an object coming 
 from a webservice) we can provide a *fallback* value that Use will return instead. 
 ```javascript
-	var result = Check.use(myObj, '.Building.apartment.rooms[2]' 'Room Unknown');
+	var result = Check.use(myObj, '.Building.apartment.rooms[2]', 'Room Unknown');
 	//result = 'kitchen'
 ```
 
