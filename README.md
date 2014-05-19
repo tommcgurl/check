@@ -61,7 +61,8 @@ So far there are three main functions: Use, Check, and checkList
 
 Use
 ---------
-**check.use**(object, attributeToUse, fallback)  
+**Check.use**(object, attributeToUse, fallback) 
+
 	Given and *object* and a *String* representing the attribute or value on that object you want to access,
 this function will return that attribute/value if it exists and doesn't throw an exception. If that 
 attribute or value is undefined or throws and exception ( possibly do to parent attribute being undefined)
@@ -93,3 +94,59 @@ from a webservice) we can provide a *fallback* value that Use will return instea
 	//result = 'kitchen'
 ```
 
+Check
+---------
+**Check.check**(object, attributeToUse)  
+
+	Eccentially the same as **Use** but this will return a boolean **true** or **false** for whether or not
+the attribute or value you are trying to access is valid. The *fallback* value for this will always be
+**false**.  
+  
+###Example:  
+
+```javascript
+	var result = Check.check(myObj, '.Building.apartment.rooms[2]');
+	//result = true
+```
+
+CheckList
+----------
+**Check.checkList**([Array of objects], [Array of strings], fallback)  
+  
+Checklist allows you to pass an array of objects and an array of accessors for which **Use** will be
+preformed on. This function returns an *array of objects*. Each object in this array will be the 
+evaluation of calling **Use** on each object in the first array argument, using each string accessor 
+*at the same index* in the second array argument.  
+  
+###Example:  
+  
+Let's add a second object...  
+  
+```javascript
+var myObj2 = {
+	House: {
+		floors: [
+			'first',
+			'second',
+			'basement'
+		]
+	}
+};
+```
+  
+We can call checklist like this...
+```javascript
+	var result = Check.checkList([
+			myObj, 
+			myObj2, 
+			myObj
+		],
+		[
+			'.Building.apartment.rooms[2]', // myObj.Building.apartment.rooms[2]
+			'.House.floors[0]', // myObj2.House.floors[0]
+			'.Building.floors' // myObj.Building.floors
+		],
+		false 
+	);
+	//result = ['bedroom','first',false]
+```

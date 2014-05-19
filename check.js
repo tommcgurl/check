@@ -45,7 +45,7 @@
 	 *  Returns true if object is valid and fallback if not or false
 	 *  if fallback is not passed
 	 */
-	check.check = function check(obj, suspect, fallback) {
+	check.check = function check(obj, suspect) {
 		return !!self.check.use(obj,suspect,false);
 	};
 	/*
