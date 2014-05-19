@@ -63,7 +63,7 @@ Use
 ---------
 **Check.use**(object, attributeToUse, fallback) 
 
-	Given and *object* and a *String* representing the attribute or value on that object you want to access,
+Given and *object* and a *String* representing the attribute or value on that object you want to access,
 this function will return that attribute/value if it exists and doesn't throw an exception. If that 
 attribute or value is undefined or throws and exception ( possibly do to parent attribute being undefined)
 then the function will return the **optional** *fallback* value provided. If no fallback value is passed then
@@ -98,7 +98,7 @@ Check
 ---------
 **Check.check**(object, attributeToUse)  
 
-	Eccentially the same as **Use** but this will return a boolean **true** or **false** for whether or not
+Eccentially the same as **Use** but this will return a boolean **true** or **false** for whether or not
 the attribute or value you are trying to access is valid. The *fallback* value for this will always be
 **false**.  
   
