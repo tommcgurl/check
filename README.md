@@ -54,3 +54,42 @@ Usage
 		result = false;
 	}
 ```
+
+Docs
+====
+So far there are three main functions: Use, Check, and checkList
+
+Use
+---------
+**check.use**(object, attributeToUse, fallback)  
+	Given and *object* and a *String* representing the attribute or value on that object you want to access,
+this function will return that attribute/value if it exists and doesn't throw an exception. If that 
+attribute or value is undefined or throws and exception ( possibly do to parent attribute being undefined)
+then the function will return the **optional** *fallback* value provided. If no fallback value is passed then
+Check will default to it's *default fallback* value.
+
+###Example:
+
+Let's say we have an object like the one above in the usage section...
+
+```javascript
+var myObj = {
+	Building: {
+		apartment: {
+			rooms: [
+				'living',
+				'kitchen',
+				'bedroom'
+			]
+		}
+	}
+};
+```
+and we want to safely access the 'bedroom' String (myObj.Building.apartments.rooms[2]). If this string 
+or anypart of this object is at some point undefined or invalide (for example if you have an object coming 
+from a webservice) we can provide a *fallback* value that Use will return instead. 
+```javascript
+	var result = Check.use(myObj, '.Building.apartment.rooms[2]' 'Room Unknown');
+	//result = 'kitchen'
+```
+
