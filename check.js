@@ -35,6 +35,8 @@
     defaultFallback: false
   };
 
-  module.exports = check;
+  if ((typeof module !== "undefined" && module !== null ? module.exports : void 0) != null) {
+    module.exports = check;
+  }
 
 }).call(this);

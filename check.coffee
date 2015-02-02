@@ -24,7 +24,6 @@ check =
 	use: (obj, suspects...)->
 		# Call the function with '...' so it passes the splat rather
 		# than the an array
-
 		return @useWithFallback(obj,suspects..., @defaultFallback)
 
 	# Return an object 
@@ -42,6 +41,6 @@ check =
 
 	defaultFallback: false
 
-
-module.exports = check;
+#export as CJS module
+module.exports = check if module?.exports?;
 
