@@ -12,7 +12,6 @@
       }
       for (_j = 0, _len = suspects.length; _j < _len; _j++) {
         suspect = suspects[_j];
-        console.log('suspect: ' + suspect);
         if (obj[suspect] == null) {
           return fallback;
         }

@@ -12,7 +12,6 @@ check =
 		# return if the first argument isn't an object
 		return fallback if typeof obj != 'object'
 		for suspect in suspects
-			console.log 'suspect: ' + suspect;
 			return fallback unless obj[suspect]?
 			obj = obj[suspect]
 		return obj
