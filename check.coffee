@@ -12,7 +12,7 @@ check =
 		# return if the first argument isn't an object
 		return fallback if typeof obj != 'object'
 		for suspect in suspects
-			return fallback unless obj[suspect]?
+			return fallback unless typeof suspect == 'string' && obj[suspect]?
 			obj = obj[suspect]
 		return obj
 
@@ -42,5 +42,8 @@ check =
 	defaultFallback: false
 
 #export as CJS module
-module.exports = check if module?.exports?;
+if module?.exports?
+	module.exports = check 
+else
+	return check
 

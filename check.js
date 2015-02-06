@@ -12,7 +12,7 @@
       }
       for (_j = 0, _len = suspects.length; _j < _len; _j++) {
         suspect = suspects[_j];
-        if (obj[suspect] == null) {
+        if (!(typeof suspect === 'string' && (obj[suspect] != null))) {
           return fallback;
         }
         obj = obj[suspect];
@@ -37,6 +37,8 @@
 
   if ((typeof module !== "undefined" && module !== null ? module.exports : void 0) != null) {
     module.exports = check;
+  } else {
+    return check;
   }
 
 }).call(this);
